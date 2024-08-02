@@ -24,22 +24,22 @@ body {
 @keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateY(-50px); /* Empuja el encabezado desde arriba */
+        transform: translateY(-50px);
     }
     to {
         opacity: 1;
-        transform: translateY(0); /* Posición final en su lugar */
+        transform: translateY(0); 
     }
 }
 
 .header {
     position: absolute;
-    top: 330px; /* Ajusta según el espacio que hayas dejado arriba */
+    top: 330px; 
     left: 0;
     right: 0;
     text-align: center;
-    z-index: 1; /* Asegúrate de que el encabezado esté por encima del contenido */
-    animation: slideIn 0.5s ease-out; /* Aplica la animación al encabezado */
+    z-index: 1; 
+    animation: slideIn 0.5s ease-out; 
 }
 
 .header h1 {
@@ -76,20 +76,20 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    margin-bottom: 10px; /* Agregado para separación entre botones */
+    margin-bottom: 10px;
 }
 
 button:hover {
     background: #0056b3;
 }
 
-/* Botones de editar y eliminar */
+
 .edit-button,
 .delete-button {
-    width: auto; /* Tamaño automático para los botones pequeños */
-    padding: 5px 10px; /* Ajustar el relleno para hacerlo más pequeño */
-    font-size: 14px; /* Tamaño de fuente más pequeño */
-    margin: 0 5px; /* Espaciado entre botones */
+    width: auto; 
+    padding: 5px 10px; 
+    font-size: 14px; 
+    margin: 0 5px; 
 }
 
 .edit-button {
@@ -100,7 +100,7 @@ button:hover {
 }
 
 .edit-button:hover {
-    background: #218838; /* Color verde más oscuro al pasar el ratón */
+    background: #218838; 
 }
 
 .delete-button {
@@ -111,10 +111,10 @@ button:hover {
 }
 
 .delete-button:hover {
-    background: #c82333; /* Color rojo más oscuro al pasar el ratón */
+    background: #c82333; 
 }
 
-/* Otros estilos */
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -123,22 +123,22 @@ ul {
 li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
-    display: flex; /* Usar flexbox para alinear botones verticalmente */
-    flex-direction: column; /* Alinear los elementos en una columna */
+    display: flex; 
+    flex-direction: column; 
 }
 
 li button {
-    width: auto; /* Ajusta el tamaño del botón a su contenido */
-    padding: 5px 10px; /* Ajustar el relleno para hacerlo más pequeño */
-    font-size: 14px; /* Tamaño de fuente más pequeño */
-    margin-top: 5px; /* Espacio entre el texto de la tarea y el botón */
+    width: auto; 
+    padding: 5px 10px; 
+    font-size: 14px; 
+    margin-top: 5px; 
 }
 
 h2 {
     margin-top: 0;
 }
 
-/* Estilo para mensajes de alerta */
+
 .alert {
     padding: 10px;
     margin-bottom: 10px;
@@ -159,14 +159,14 @@ h2 {
     border-color: #f5c6cb;
 }
 
-/* Estilo para modales */
+
 .modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+    background: rgba(0, 0, 0, 0.5); 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,22 +174,22 @@ h2 {
 }
 
 .modal-content {
-    background: #ffffff; /* Fondo blanco para el contenido del modal */
+    background: #ffffff; 
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para el modal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     width: 90%;
     max-width: 500px;
     box-sizing: border-box;
 }
 
 .modal-content button {
-    padding: 10px 15px; /* Espaciado adecuado para los botones */
-    font-size: 16px; /* Tamaño de fuente adecuado */
+    padding: 10px 15px; 
+    font-size: 16px; 
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin: 5px 0; /* Espacio entre botones */
+    margin: 5px 0; 
 }
 
 .modal-content button[type="submit"] {
@@ -201,7 +201,7 @@ h2 {
     background: #0056b3;
 }
 
-/* Botón de cancelar */
+
 .modal-content button[type="button"] {
     background: #6c757d;
     color: #ffffff;
@@ -225,10 +225,10 @@ h2 {
 
 #closeEditProjectModal,
 #closeEditTaskModal {
-    background: #6c757d; /* Gris para cancelar */
+    background: #6c757d; 
 }
 
 #closeEditProjectModal:hover,
 #closeEditTaskModal:hover {
-    background: #5a6268; /* Gris más oscuro al pasar el ratón */
+    background: #5a6268; 
 }

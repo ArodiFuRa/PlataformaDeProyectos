@@ -48,12 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             if (data.status === 'success') {
                 localStorage.setItem('token', data.token);
-                localStorage.setItem('userName', data.user.name); // Guardar nombre del usuario
+                localStorage.setItem('userName', data.user.name); 
                 document.getElementById('auth-section').style.display = 'none';
                 document.getElementById('projects-section').style.display = 'block';
-                displayUserName(data.user.name); // Mostrar nombre del usuario
+                displayUserName(data.user.name); 
                 loadProjects();
-                clearForm(loginForm); // Limpiar campos de inicio de sesión
+                clearForm(loginForm); 
             } else {
                 alert(data.message);
             }
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             if (data.status === 'success') {
                 alert(data.message);
-                clearForm(registerForm); // Limpiar campos de registro
+                clearForm(registerForm); 
             } else {
                 alert(data.message);
             }
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const projectsList = document.getElementById('projectsList');
             const taskProject = document.getElementById('taskProject');
             projectsList.innerHTML = '';
-            taskProject.innerHTML = '<option value="">Selecciona un proyecto</option>'; // Reset options
+            taskProject.innerHTML = '<option value="">Selecciona un proyecto</option>'; 
 
             data.forEach(project => {
                 const li = document.createElement('li');
@@ -108,13 +108,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const editButton = document.createElement('button');
                 editButton.textContent = 'Editar';
-                editButton.classList.add('edit-button'); // Añadido para aplicar estilos
+                editButton.classList.add('edit-button'); 
                 editButton.addEventListener('click', () => openEditProjectModal(project));
                 li.appendChild(editButton);
 
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Eliminar';
-                deleteButton.classList.add('delete-button'); // Añadido para aplicar estilos
+                deleteButton.classList.add('delete-button'); 
                 deleteButton.addEventListener('click', () => deleteProject(project.id));
                 li.appendChild(deleteButton);
 
@@ -146,13 +146,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const editButton = document.createElement('button');
                 editButton.textContent = 'Editar';
-                editButton.classList.add('edit-button'); // Añadido para aplicar estilos
+                editButton.classList.add('edit-button'); 
                 editButton.addEventListener('click', () => openEditTaskModal(task));
                 li.appendChild(editButton);
 
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Eliminar';
-                deleteButton.classList.add('delete-button'); // Añadido para aplicar estilos
+                deleteButton.classList.add('delete-button'); 
                 deleteButton.addEventListener('click', () => deleteTask(task.id));
                 li.appendChild(deleteButton);
 
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('editTaskId').value = task.id;
         document.getElementById('editTaskTitle').value = task.title;
         document.getElementById('editTaskDescription').value = task.description;
-        document.getElementById('taskProject').value = task.projectId || ''; // Asignar el proyecto actual
+        document.getElementById('taskProject').value = task.projectId || ''; 
         editTaskModal.style.display = 'block';
     }
 

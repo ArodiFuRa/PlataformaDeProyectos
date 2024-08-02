@@ -1,0 +1,234 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px); /* Empuja el encabezado desde arriba */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Posición final en su lugar */
+    }
+}
+
+.header {
+    position: absolute;
+    top: 330px; /* Ajusta según el espacio que hayas dejado arriba */
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1; /* Asegúrate de que el encabezado esté por encima del contenido */
+    animation: slideIn 0.5s ease-out; /* Aplica la animación al encabezado */
+}
+
+.header h1 {
+    color: #007BFF;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    margin: 0;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="password"], input[type="email"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px; /* Agregado para separación entre botones */
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Botones de editar y eliminar */
+.edit-button,
+.delete-button {
+    width: auto; /* Tamaño automático para los botones pequeños */
+    padding: 5px 10px; /* Ajustar el relleno para hacerlo más pequeño */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    margin: 0 5px; /* Espaciado entre botones */
+}
+
+.edit-button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+.edit-button:hover {
+    background: #218838; /* Color verde más oscuro al pasar el ratón */
+}
+
+.delete-button {
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+.delete-button:hover {
+    background: #c82333; /* Color rojo más oscuro al pasar el ratón */
+}
+
+/* Otros estilos */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex; /* Usar flexbox para alinear botones verticalmente */
+    flex-direction: column; /* Alinear los elementos en una columna */
+}
+
+li button {
+    width: auto; /* Ajusta el tamaño del botón a su contenido */
+    padding: 5px 10px; /* Ajustar el relleno para hacerlo más pequeño */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    margin-top: 5px; /* Espacio entre el texto de la tarea y el botón */
+}
+
+h2 {
+    margin-top: 0;
+}
+
+/* Estilo para mensajes de alerta */
+.alert {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.alert.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Estilo para modales */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #ffffff; /* Fondo blanco para el contenido del modal */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para el modal */
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.modal-content button {
+    padding: 10px 15px; /* Espaciado adecuado para los botones */
+    font-size: 16px; /* Tamaño de fuente adecuado */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 0; /* Espacio entre botones */
+}
+
+.modal-content button[type="submit"] {
+    background: #007BFF;
+    color: #ffffff;
+}
+
+.modal-content button[type="submit"]:hover {
+    background: #0056b3;
+}
+
+/* Botón de cancelar */
+.modal-content button[type="button"] {
+    background: #6c757d;
+    color: #ffffff;
+}
+
+.modal-content button[type="button"]:hover {
+    background: #5a6268;
+}
+
+#editProjectModal .modal-content,
+#editTaskModal .modal-content {
+    background: #fff;
+}
+
+#editProjectModal button,
+#editTaskModal button {
+    width: auto;
+    padding: 10px 20px;
+    margin: 0 5px;
+}
+
+#closeEditProjectModal,
+#closeEditTaskModal {
+    background: #6c757d; /* Gris para cancelar */
+}
+
+#closeEditProjectModal:hover,
+#closeEditTaskModal:hover {
+    background: #5a6268; /* Gris más oscuro al pasar el ratón */
+}
